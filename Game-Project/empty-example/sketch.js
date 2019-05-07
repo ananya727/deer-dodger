@@ -20,7 +20,7 @@ function draw(){
 	    balls[i].drawBall();
       balls[i].moveBall();
 
-image(img,75,50,50,50);
+image(img,20,140,75,75);
 	  }
 
 
@@ -31,7 +31,7 @@ function keyPressed(){ //every time you push a key, make a new ball from the bal
   let c = random (300);
 
 
-  let  b = new Ball(75, 150, 10/random(30) );
+  let  b = new Ball(105, 150, 10/random(30) );
   balls.push(b);
   console.log(balls);
 }
