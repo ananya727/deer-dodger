@@ -24,9 +24,20 @@ image(img,20,140,75,75);
 	  }
 
 
-}
 
-function keyPressed(){ //every time you push a key, make a new ball from the ball class and add it to the balls array
+
+// // function keyPressed(){ //every time you push a key, make a new ball from the ball class and add it to the balls array
+//   let a = random (300);
+//   let c = random (300);
+//
+//
+//   let  b = new Ball(105, 150, 10/random(30) );
+//   balls.push(b);
+//   console.log(balls);
+// // }
+
+
+if (frameCount % 40 == 0) {
   let a = random (300);
   let c = random (300);
 
@@ -34,7 +45,10 @@ function keyPressed(){ //every time you push a key, make a new ball from the bal
   let  b = new Ball(105, 150, 10/random(30) );
   balls.push(b);
   console.log(balls);
+  }
+
 }
+
 
 //ball class from which to create new balls with similar properties.
 class Ball {
