@@ -2,7 +2,7 @@
 //create an empty array called balls
 
 let balls = [];
-
+let time = 0;
 
 function setup() {
   createCanvas(800, 400);
@@ -14,6 +14,12 @@ function preload() {
 
 function draw(){
 	background(66, 134, 244);
+  if (frameCount % 90 == 0){
+    time = time+1;
+  }
+  textSize(28);
+  text('Score:',10,30)
+  text(time, 100,30);
 
 //	draw all the balls in that array
 	for (let i = 0; i < balls.length; i++) {
