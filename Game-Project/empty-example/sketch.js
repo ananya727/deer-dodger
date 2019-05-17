@@ -8,6 +8,7 @@ let died = false;
 let hunterpic;
 let elephantpic;
 let hitcount = 0;
+let time = 0;
 
 
 function preload() {
@@ -25,6 +26,11 @@ function draw(){
 	background(66, 134, 244);
   image(hunterpic,20,140,75,75);
   print(died);
+
+  if (frameCount % 90 == 0){
+    time = time+1;
+    text(time,20,20);
+  }
 
   if (frameCount % 40 == 0) {
     let a = random (300);
