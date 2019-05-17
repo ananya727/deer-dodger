@@ -29,8 +29,10 @@ function draw(){
 
   if (frameCount % 90 == 0){
     time = time+1;
-    text(time,20,20);
   }
+  textSize(28);
+  text('Score:',10,30)
+  text(time, 100,30);
 
   if (frameCount % 40 == 0) {
     let a = random (300);
@@ -48,6 +50,7 @@ function draw(){
 
     me.drawMe();
     me.moveMe();
+    me.die();
 
     if (died == true){
       textSize(32);
@@ -82,11 +85,11 @@ class Ball {
 		this.y = this.y+this.e;
 	}
 
-  // hit(){
-  //   if(this.x>=me.x+10 && this.y>=  ){ //figure out when this.x will connect with me.x (the elephant) and this.y for me.y
-  //     hitcount = hitcount +1;
-  //   }
-  // }
+  hit(){
+    if(this.x >= me.x-15 && this.x <= me.x+15 && this.y > me.y-40 && this.y < me.y+40 ){ //figure out when this.x will connect with me.x (the elephant) and this.y for me.y
+      hitcount = hitcount +1;
+    }
+  }
 
 
 }
@@ -116,11 +119,15 @@ class Avatar {
 	}
 
   die(){
-    if (hitcount > 1) {
-      print("die");
-      died = true
+    if (hitcount>2){
+      died=true;
+      background(0,0,0);
 
     }
 
   }
+
+  //if the ball hits the person, change the speed value to negative (send it in the opposite direction)
+
+
 }
