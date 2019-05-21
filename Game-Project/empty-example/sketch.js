@@ -63,7 +63,7 @@ function draw(){
       text('being killed for their ivory. We hope this gaming',10,75);
       text('experience has allowed you to gain perspective and ', 10,103);
       text('awareness on this critical issue.',10,131);
-      score = time;
+      time =
       text(score,400,200);
 
     }
