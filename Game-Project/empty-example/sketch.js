@@ -25,19 +25,21 @@ function setup() {
 function draw(){
 	background(66, 134, 244);
   image(hunterpic,20,140,75,75);
-  print(died);
+  //print(died);
 
   if (frameCount % 90 == 0){
     time = time+1;
   }
   textSize(28);
-  text('Score:',10,30)
+  text('Score:',10,30);
   text(time, 100,30);
+  text('Hitcount:', 650,30);
+  text(hitcount, 770,30);
 
   if (frameCount % 40 == 0) {
     let a = random (300);
     let c = random (300);
-    let  b = new Ball(105, 150, 10/random(30) );
+    let  b = new Ball(105, 150, 10/random(-50,50) );
     balls.push(b);
     //console.log(balls);
     }
@@ -46,6 +48,7 @@ function draw(){
 	for (let i = 0; i < balls.length; i++) {
 	    balls[i].drawBall();
       balls[i].moveBall();
+      balls[i].hit();
 	  }
 
     me.drawMe();
@@ -56,9 +59,13 @@ function draw(){
       textSize(32);
       fill("red")
       noStroke();
-      text('You Died :(',10,47);
-      fill(220);
-      rect(me.x-25, me.y-15, 90, 200);
+      text('You Died.This is a commentary on how elephants are ',10,47);
+      text('being killed for their ivory. We hope this gaming',10,75);
+      text('experience has allowed you to gain perspective and ', 10,103);
+      text('awareness on this critical issue.',10,131);
+      score = time;
+      text(score,400,200);
+
     }
 
 }
@@ -86,9 +93,13 @@ class Ball {
 	}
 
   hit(){
-    if(this.x >= me.x-15 && this.x <= me.x+15 && this.y > me.y-40 && this.y < me.y+40 ){ //figure out when this.x will connect with me.x (the elephant) and this.y for me.y
-      hitcount = hitcount +1;
-    }
+   if(this.x > me.x-25 && this.x <= me.x+25 && this.y > me.y-25&& this.y < me.y+25 ){ //figure out when this.x will connect with me.x (the elephant) and this.y for me.y
+    hitcount = hitcount +1;
+    print(hitcount);
+
+  }
+
+  //  }
   }
 
 
@@ -119,7 +130,7 @@ class Avatar {
 	}
 
   die(){
-    if (hitcount>2){
+    if (hitcount>5){
       died=true;
       background(0,0,0);
 
