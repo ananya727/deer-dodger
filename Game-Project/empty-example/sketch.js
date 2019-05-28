@@ -17,7 +17,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(800, 400);
+  createCanvas(windowWidth, windowHeight);
   me = new Avatar(width/2, 300, 3);
 
 }
@@ -25,6 +25,8 @@ function setup() {
 function draw(){
 	background(66, 134, 244);
   image(hunterpic,20,140,75,75);
+  text('Use the up and down arrow keys to move the elephant.',100,600);
+  text('Dodge the bullets. When your hitcount exceeds 5, you lose.',100,650);
   //print(died);
 
   if (frameCount % 90 == 0){
@@ -62,7 +64,7 @@ function draw(){
       text('You Died.This is a commentary on how elephants are ',10,47);
       text('being killed for their ivory. We hope this gaming',10,75);
       text('experience has allowed you to gain perspective and ', 10,103);
-      text('awareness on this critical issue.',10,131);
+      text('awareness on this critical issue. Reload to play again.',10,131);
       time =
       text(score,400,200);
 
